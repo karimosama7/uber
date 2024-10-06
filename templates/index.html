@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Form</title>
+    <link rel="stylesheet" href="static\styles.css">
+</head>
+<body>
+    <h1>Enter Features for Prediction</h1>
+    <form action="/predict" method="POST">
+        <label for="priceperweek">Price per Week:</label>
+        <input type="text" name="priceperweek" required><br>
+
+        <label for="population">Population:</label>
+        <input type="text" name="population" required><br>
+
+        <label for="monthlyincome">Monthly Income:</label>
+        <input type="text" name="monthlyincome" required><br>
+
+        <label for="averageparkingpermonth">Average Parking per Month:</label>
+        <input type="text" name="averageparkingpermonth" required><br>
+
+        <button type="submit">Predict</button>
+    </form>
+    
+    {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
